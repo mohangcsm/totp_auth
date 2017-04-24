@@ -16,5 +16,5 @@ Make sure "Mongo" running with following values:
 	MONGO_PASSWORD = ''
 
 Running Program : 	
-    > python totp.py <email>   				(For registering Authenticator app)
-    > python totp.py <email> <otp_value>  	(For checking OTP generated in Authenticator app)
+	> python totp.py <email>   				(For registering Authenticator app)
+	> python totp.py <email> <otp_value>  	(For checking OTP generated in Authenticator app)
