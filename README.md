@@ -15,6 +15,13 @@ Make sure "Mongo" running with following values:
 	MONGO_USERNAME = ''
 	MONGO_PASSWORD = ''
 
-Running Program : 	
-    # python totp.py <email>   				(For registering Authenticator app)
-    # python totp.py <email> <otp value>  	(For checking OTP generated in Authenticator app)
+Running Program:
+
+	# python totp.py    			(For registering Authenticator app)
+	# python totp.py email   		(For registering Authenticator app)
+	# python totp.py email otp_value  	(For checking OTP generated in Authenticator app)
+	
+
+This will generate a QR code image (.svg) in the "qrcodes" folder, which can be scanned using any Authenticator app like Google Authenticator or DUO authenticator etc. 
+Once the QRCode is scanned, enter the generated OTP value at the prompt to complete the Authenticator enabling.
+
