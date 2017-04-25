@@ -22,7 +22,7 @@ db=client.otp_auth			# db initialization
 def check_otp(email,totp,secret):
 	otp_generated = totp.now()
 	dt = strftime("%a, %d %b %Y %H:%M:%S", gmtime())
-	otp_entered = raw_input("Please Enter OTP generated in authenticator: ")
+	otp_entered = raw_input("\nPlease Enter OTP generated in authenticator: ")
 	if(otp_generated == otp_entered):
 		res = res = db.secrets.update({'email':email,'used':'false'},{'$set':{'used':'true','date':dt}})
 		os.remove('qrcodes/'+email.replace('@','-')+".svg")
@@ -56,7 +56,7 @@ def main(argv):
 			email = argv[1]
 
 		elif len(argv) == 1:
-			email = raw_input("Enter Email ID to be used: ").strip(" ")
+			email = raw_input("\nEnter Email ID to be used: ").strip(" ")
 
 		else:
 			print "Error. Try again\n"
@@ -80,8 +80,11 @@ def main(argv):
 			os.makedirs('qrcodes')
 
 		img.svg('qrcodes/'+email.replace('@','-')+".svg", scale=8)
+		print '\nQRCode is saved as "qrcodes/'+email.replace('@','-')+'.svg"'
 
+		raw_input('\npress enter after scanning QR code with Authenticator app')
 		print check_otp(email,totp,secret)
+
 
     except KeyboardInterrupt:
         print " Identified. Program Terminated"
