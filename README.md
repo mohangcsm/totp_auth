@@ -2,11 +2,14 @@ This project shows the python implementation for Time-based OTP with Authenticat
 
 The following are the dependency libraries. Use PIP or EASY_INSTALL or BREW to install the below.
 
-	pyotp
-	pyqrcode
-	pymongo
-	base64
-	Image
+	pyotp==2.3.0
+	image==1.5.31
+	pymongo==3.10.1
+	PyQRCode==1.2.1
+
+Installation using PIP:
+
+	pip install -r requirements.txt
 
 Make sure "Mongo" running with following values:
 
